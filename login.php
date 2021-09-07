@@ -23,11 +23,14 @@ if (isset($_REQUEST["submit"])) {
             $_SESSION["f_name"] = $dataSet["f_name"];
             header("Location: home.php");
             exit();
+        } else {
+            echo "<script>alert('Invalid Email or Password!');</script>"; 
         }
     }
     else {
-        $_SESSION["loginFail"] = "Invalid username or password!";
-        header("Location: login.php");
+        echo "<script>alert('Invalid Email or Password!');</script>"; 
+        // $_SESSION["loginFail"] = "Invalid username or password!";
+        // header("Location: login.php");
         exit();
     }
 }
