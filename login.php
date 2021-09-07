@@ -15,13 +15,12 @@ if (isset($_REQUEST["submit"])) {
     $password = $_REQUEST["password"];
 
     require_once "dbConnect.php";
-    $queryLogin = "SELECT * FROM users WHERE email='$email";
+    $queryLogin = "SELECT * FROM user WHERE email='$email'";
     $result = $conn -> query($queryLogin);
     if (($result -> num_rows) == 1) {
         $dataSet = $result -> fetch_array(MYSQLI_ASSOC);
         if (password_verify($password, $dataSet["password"])) {
-            $_SESSION["name"] = $dataSet["name"];
-            $_SESSION["role"] = $dataSet["role"];
+            $_SESSION["f_name"] = $dataSet["f_name"];
             header("Location: home.php");
             exit();
         }
@@ -54,7 +53,7 @@ if (isset($_SESSION["loginFail"])) {
 <div class="form-input">
     <form method="post">
 
-        <input name="email" placeholder="E-Mail Address" value="Email" type="text" title="Email will be used as your login username." required>
+        <input name="email" placeholder="E-Mail Address" value="email" type="text" title="Email will be used as your login username." required>
 
         <input name="password" placeholder="Password" value="password" type="password" title="Password" required>
 

@@ -13,8 +13,8 @@ session_start();
 <h1>Home</h1>
 
 <?php
-if (isset($_SESSION["name"]) and isset($_SESSION["role"])) {
-    echo "<h2> Welcome " . $_SESSION["name"] . "!</h2><br/>";
+if (isset($_SESSION["f_name"])) {
+    echo "<h2> Welcome " . $_SESSION["f_name"] . "!</h2><br/>";
 }
 else {
     $_SESSION["noLogin"] = "You are not logged in!";

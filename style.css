@@ -1,6 +1,6 @@
 body {
     background: #2E3740;
-    color: #445566;
+    color: #9999BB;
     font-family: "Open Sans", sans-serif;
     text-align: center;
 }
@@ -12,6 +12,10 @@ h1 {
     font-weight: bold;
     margin-bottom: 20px;
     margin-top: 40px;
+}
+
+h2 {
+    text-align: center;
 }
 
 p {
